@@ -28,3 +28,4 @@ jobs:
       with:
         workload_identity_provider: 'projects/838277582049/locations/global/workloadIdentityPools/test-wip/providers/test-provider'
         service_account: 'test-wif@as-joonix-project-001.iam.gserviceaccount.com'
+        token_format: 'access_token'

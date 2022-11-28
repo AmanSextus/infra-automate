@@ -13,6 +13,8 @@ on:
 jobs:
   job_id:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     # Add "id-token" with the intended permissions.
     permissions:
       contents: 'read'

@@ -22,5 +22,5 @@ jobs:
       name: 'Authenticate to Google Cloud'
       uses: 'google-github-actions/auth@v0.4.0'
       with:
-        workload_identity_provider: 'projects/as-joonix-project-001/locations/global/workloadIdentityPools/test-wip/providers/test-provider'
+        workload_identity_provider: 'projects/838277582049/locations/global/workloadIdentityPools/test-wip/providers/test-provider'
         service_account: 'test-wif@as-joonix-project-001.iam.gserviceaccount.com'

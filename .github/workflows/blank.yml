@@ -34,5 +34,6 @@ jobs:
     - name: 'gcloud login'
       env: 
         CLOUDSDK_AUTH_ACCESS_TOKEN: '${{ steps.auth.outputs.access_token }}'
-      run: 'gcloud auth login --no-launch-browser'
-      run: 'gcloud compute instances list'
+      run: |
+        gcloud auth login --no-launch-browser
+        gcloud compute instances list

@@ -29,12 +29,10 @@ jobs:
         workload_identity_provider: 'projects/838277582049/locations/global/workloadIdentityPools/new-pool/providers/new-provider'
         service_account: 'my-service-account@as-joonix-project-001.iam.gserviceaccount.com'
         token_format: 'access_token'
-        create_credentials_file: true
+        create_credentials_file: false
         
     - name: 'gcloud login'
       env: 
         CLOUDSDK_AUTH_ACCESS_TOKEN: '${{ steps.auth.outputs.access_token }}'
-      uses: actions/github-script@v6
-      with: 
-        script: | 
-          gcloud compute instances list
+      run: 'gcloud auth login --no-launch-browser'
+      run: 'gcloud compute instances list'

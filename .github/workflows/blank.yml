@@ -31,7 +31,8 @@ jobs:
         token_format: 'access_token'
         create_credentials_file: false
     - name: 'gcloud login'
+      env: 
+        CLOUDSDK_AUTH_ACCESS_TOKEN: '${{ steps.auth.outputs.access_token }}'
       run: |
-        'export CLOUDSDK_AUTH_ACCESS_TOKEN=${{ steps.auth.outputs.access_token }}'
         'gcloud auth login --no-launch-browser'
         'gcloud compute instances list'
